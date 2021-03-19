@@ -1,0 +1,101 @@
+@import "./main/stylesheet";
+@import './main/parameters';
+
+@import "./main/reset";
+
+//https://www.figma.com/file/gflV0lUFNqsE9PG2FwGbb2/DSJ-Desktop-(Copy)-(Copy)
+
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+
+$bg-color: #FFF;
+
+.container{
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header-index{
+    background: url(../imgs/indexHeader.jpg) center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+
+    &__title{
+        padding: 315px 0 23px;
+        font-weight: 300;
+        font-size: 49px;
+        line-height: 60px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+
+        color: #FFF;
+    }
+    &__text{
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 1.5em;
+        text-transform: uppercase;
+
+        color: #FFF;
+    }
+    &__slider{
+        padding: 190px 0 0;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+
+        color: $c-text;
+    }
+}
+
+// Начинается секция "Новинки каталога"
+
+.new-catalog{
+    text-align: center;
+
+    &__title{
+        padding: 52px 0 16px;
+        font-size: 32px;
+        line-height: 39px;
+
+        color: #434343;
+    }
+    &__nav{
+        padding: 10px 0 20px;
+    }
+    &__item{
+        display: inline-block;
+        padding: 0 10px;
+        position: relative;
+    }
+    &__item:before{
+        position: absolute;
+        content: "";
+        background-image: url(../imgs/lineCatalog.svg);
+        width: 34px;
+        height: 2px;
+        top: 30px;
+        left: 33.3333%;
+    }
+    &__link{
+        font-size: 18px;
+        line-height: 22px;
+        text-decoration: none;
+
+        color: #B8A99C;
+    }
+    &__link:hover,
+    &__link:focus{
+       
+        color: #A39385;
+    }
+    &__inner{}
+    &__btn{}
+}

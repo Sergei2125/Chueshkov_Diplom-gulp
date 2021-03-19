@@ -1,9 +1,28 @@
 extends layout/layout
 
 block vars
-    - var pageTitle = 'Главная страница'
+    - var pageTitle = 'Diplom'
     - var pageBodyClass = 'homepage'
     - var pageHeaderClass = ''
-    
+
 block content
-    p index
+    //- здесь код страницы
+    .header-index
+        .container
+            .header-index__title dementra sapphire lewelry
+            .header-index__text since 2007
+            .header-index__slider Лучшие ювелирные украшения
+    section 
+        .container
+            .new-catalog
+                .new-catalog__title Новинки каталога
+                .new-catalog__nav
+                    ul.new-catalog__nav
+                        li.new-catalog__item
+                            a.new-catalog__link(href="#") Кольца
+                        li.new-catalog__item
+                            a.new-catalog__link(href="#") Серьги
+                        li.new-catalog__item
+                            a.new-catalog__link(href="#") Подвески
+                .new-catalog__inner здесь будет слайдер
+                .new-catalog__btn
