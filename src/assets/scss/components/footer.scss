@@ -1,5 +1,138 @@
-// @import "../main/parameters";
+@import "../main/parameters";
 
-// .footer {
+footer{
+    background-color: #343E45;
+    padding: 50px;
 
-// }
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    &__logo{
+        padding: 10px;
+    }
+}
+
+.footer-about{
+    padding: 10px;
+
+    &__link{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 30px;
+        text-decoration: none;
+
+        color: #FFF;    
+    }
+    &__link:hover{
+        color: $c-primary;
+        transition: color ease 0.3s;    
+    }
+}
+.footer-products{
+    padding: 10px;
+    display: flex;
+    &__model,
+    &__material,
+    &__rock{
+        padding: 0 10px;
+    }
+    &__link{
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 30px;
+
+        color: $c-text 
+    }
+    &__link:hover{
+        color: $c-primary;
+        transition: color ease 0.3s;
+    }
+}
+.footer-contact{
+    padding: 12px 10px 10px;
+    &__title{
+        padding: 3px 0 0px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+
+        color: #FFF;
+    }
+    &__text{
+        padding: 15px 0 20px ;
+        width: 230px;
+        font-size: 14px;
+        line-height: 30px;
+        
+        color: #FFF;
+    }
+    &__text>a{
+        padding: 15px 0 20px ;
+        width: 230px;
+        font-size: 14px;
+        line-height: 30px;
+        text-decoration: none;
+        
+        color: #FFF;
+    }
+    &__text>a:hover,
+    &__text>a:focus{
+        color: $c-text2;
+        transition: color ease 0.3s;
+    }
+}
+.footer-info{
+    position: relative;
+    
+    &__tel,
+    &__insta{
+        padding-left: 35px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 30px;
+        text-decoration: none;
+        color: $c-text2;
+    }
+    &__tel:before{
+        position: absolute;
+        content: "";
+        background-image: url(../Imgs/whatsapp.png);
+        width: 24px;
+        height: 24px;
+        left: 0;
+    }
+    &__insta:before{
+        position: absolute;
+        content: "";
+        background-image: url(../Imgs/Instagram02.png);
+        width: 24px;
+        height: 24px;
+        left: 0;
+    }
+    &__link{
+        font-size: 14px;
+        line-height: 17px;
+        text-decoration: none;
+        color:$c-text2;
+    }
+    &__link:hover,
+    &__link:focus,
+    &__tel:hover,
+    &__tel:focus,
+    &__insta:hover,
+    &__insta:focus{
+        color: #FFF;
+        transition: color ease 0.3s;
+    }
+    &__write{
+        margin: 20px 0 0;
+    }
+    
+}
+.bottom{
+    font-size: 12px;
+    line-height: 15px;
+
+    color: rgba(255, 255, 255, 0.2);
+}

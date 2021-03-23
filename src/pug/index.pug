@@ -7,22 +7,104 @@ block vars
 
 block content
     //- здесь код страницы
-    .header-index
+    .header-content
         .container
-            .header-index__title dementra sapphire lewelry
-            .header-index__text since 2007
-            .header-index__slider Лучшие ювелирные украшения
+            .header-index
+                .header-index__null
+                .header-index__title dementra sapphire lewelry
+                .header-index__text since 2007
+                .header-index__slider 
+                    a.header-index__link(href="#newCatalog") Лучшие ювелирные украшения 
+                        img.header-index__img(src="../assets/imgs/bottomArrow.svg", alt="bottomArrow")
     section 
         .container
             .new-catalog
-                .new-catalog__title Новинки каталога
+                .new-catalog__title#newCatalog Новинки каталога
                 .new-catalog__nav
                     ul.new-catalog__nav
                         li.new-catalog__item
-                            a.new-catalog__link(href="#") Кольца
+                            a.new-catalog__link.activeclick(href="#") Кольца
                         li.new-catalog__item
                             a.new-catalog__link(href="#") Серьги
                         li.new-catalog__item
                             a.new-catalog__link(href="#") Подвески
-                .new-catalog__inner здесь будет слайдер
-                .new-catalog__btn
+                .product
+                    mixin product(arg={})
+                        .card
+                            a.card__link(href="#") 
+                                img.card__img(src=arg.img_src, alt="товар")
+                                .card__content
+                                    .card__newPrace=arg.new_price
+                                    .card__oldPrace=arg.old_price
+                                    .card__ring
+                                        img(src="../assets/imgs/stars.png", alt="stars")
+                                    .card__text=arg.description
+                                    a.card__bottom(href="#")
+                                        .card__btn в корзину
+                    +product({
+                        img_src: "../assets/imgs/ring001.png",
+                        new_price: "12 990 ₽",
+                        old_price: "28 800 ₽",
+                        description: "Кольцо из желтого золота с родированием с бриллиантом"
+                    })
+                    +product({
+                        img_src: "../assets/imgs/ring001.png",
+                        new_price: "12 990 ₽",
+                        old_price: "28 800 ₽",
+                        description: "Кольцо из желтого золота с родированием с бриллиантом"
+                    })
+                    +product({
+                        img_src: "../assets/imgs/ring001.png",
+                        new_price: "12 990 ₽",
+                        old_price: "28 800 ₽",
+                        description: "Кольцо из желтого золота с родированием с бриллиантом"
+                    })
+                    +product({
+                        img_src: "../assets/imgs/ring001.png",
+                        new_price: "12 990 ₽",
+                        old_price: "28 800 ₽",
+                        description: "Кольцо из желтого золота с родированием с бриллиантом"
+                    })
+                
+                    
+
+                a.new-catalog__btn(href="#") Перейти в каталог
+    section 
+        .container
+            .insta
+                .insta__title Мы в Instagram
+                .insta__icons
+                    mixin insta-icon(arg={})
+                        .insta-icon
+                            img.insta-icon__img(src=arg.src_img, alt="insta-icon")
+                            .insta-icon__num=arg.src_num
+                            .insta-icon__text=arg.src_text 
+                    +insta-icon({
+                        src_img: "../assets/imgs/instaIcon01.svg",
+                        src_num: "24",
+                        src_text: "post"
+                    })
+                    +insta-icon({
+                        src_img: "../assets/imgs/instaIcon02.svg",
+                        src_num: "1,520",
+                        src_text: "followers"
+                    })
+                    +insta-icon({
+                        src_img: "../assets/imgs/instaIcon03.svg",
+                        src_num: "66",
+                        src_text: "following"
+                    })
+            
+                .insta__product
+                    img.insta__img(src="../assets/imgs/instaImg01.jpg", alt="InstaImg")
+                    img.insta__img(src="../assets/imgs/instaImg01.jpg", alt="InstaImg")
+                    img.insta__img(src="../assets/imgs/instaImg01.jpg", alt="InstaImg")
+                    img.insta__img(src="../assets/imgs/instaImg01.jpg", alt="InstaImg")
+                    img.insta__img(src="../assets/imgs/instaImg01.jpg", alt="InstaImg")
+                    img.insta__img(src="../assets/imgs/instaImg01.jpg", alt="InstaImg")
+                
+                
+                //.insta-btn                                                        
+                a.insta-btn(href="#")
+                        //img.insta-btn__icon(src="../assets/imgs/Instagram.svg", alt="Instagram")                  
+                        .insta-btn__text Подписаться                

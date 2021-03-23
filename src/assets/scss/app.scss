@@ -7,6 +7,7 @@
 
 html{
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
 }
 *{
     box-sizing: border-box;
@@ -15,25 +16,34 @@ html{
 $bg-color: #FFF;
 
 .container{
-    width: 1000px;
+    width: 1030px;
     margin: 0 auto;
     padding: 0 15px;
 }
-
-.header-index{
+.header-content{
     background: url(../imgs/indexHeader.jpg) center no-repeat;
     background-size: cover;
     height: 100vh;
     text-align: center;
-
+    max-width: 100%;
+}
+.header-index{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+    &__null{ //кручу верчу обмануть хочу)
+        flex-basis: 50%;
+    }
     &__title{
-        padding: 315px 0 23px;
+        padding: 0px 0 0px;
         font-weight: 300;
         font-size: 49px;
         line-height: 60px;
         letter-spacing: 0.25em;
         text-transform: uppercase;
-
+        flex-basis: 15%;
         color: #FFF;
     }
     &__text{
@@ -42,16 +52,27 @@ $bg-color: #FFF;
         line-height: 22px;
         letter-spacing: 1.5em;
         text-transform: uppercase;
-
+        flex-basis: 25%;
         color: #FFF;
     }
     &__slider{
-        padding: 190px 0 0;
         font-size: 16px;
         line-height: 20px;
         text-align: center;
-
+        flex-basis: 10%;
+        
+    }
+    &__link{
+        //padding: 10px;
         color: $c-text;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        text-decoration: none;
+    }
+    &__img{
+        display: block;
+        margin: 0 auto;
     }
 }
 
@@ -59,9 +80,10 @@ $bg-color: #FFF;
 
 .new-catalog{
     text-align: center;
+    margin: 40px 0 60px;
 
     &__title{
-        padding: 52px 0 16px;
+        padding: 42px 0 16px;
         font-size: 32px;
         line-height: 39px;
 
@@ -75,27 +97,429 @@ $bg-color: #FFF;
         padding: 0 10px;
         position: relative;
     }
-    &__item:before{
+    &__item:hover:before{
         position: absolute;
         content: "";
         background-image: url(../imgs/lineCatalog.svg);
         width: 34px;
         height: 2px;
         top: 30px;
-        left: 33.3333%;
+        left: calc(50% - 17px);
     }
     &__link{
         font-size: 18px;
         line-height: 22px;
         text-decoration: none;
 
-        color: #B8A99C;
+        color: $c-text2;
     }
-    &__link:hover,
-    &__link:focus{
-       
-        color: #A39385;
+    &__item:hover,
+    &__item:focus{
+        .new-catalog__link{
+            color:  rgba(51, 51, 51, 0.7);
+        }
     }
     &__inner{}
     &__btn{}
+}
+
+//описание карты продукта
+.product{
+    display: flex;
+    justify-content: space-between;
+}
+.card{
+    padding: 30px 10px 20px;
+    flex: 0 1 25%;
+    max-width: 25%;
+    position: relative;
+    text-align: center;
+    //border: 1px solid black;
+    &__link{
+        text-decoration: none;
+    }
+    &__img{
+        left: 20px;
+        top: 50px;
+    }
+    &__content{
+        padding: 0px 0 0;
+    }
+    &__newPrace{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+
+        color: #333;
+    }
+    &__oldPrace{
+        padding: 11px 0;
+        text-decoration: line-through;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: #B8A99C;
+    }
+    &__ring{
+        //position: absolute;
+        //top: 292px;
+        //left: 24%;
+        //background: #FFF;
+        //z-index: -1;
+    }
+    &__text{
+        font-size: 16px;
+        line-height: 20px;
+        padding: 10px 0;
+        color: rgba(51, 51, 51, 0.7);
+    }
+    &__bottom{
+        text-decoration: none;
+        color: #FFF;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        
+    }
+    &__btn{
+        text-decoration: none;
+        padding: 11px 0px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        margin: 10px 20px;
+        border-radius: 5px;
+        color: #FFF;
+        background-color: $c-primary;
+    }
+}
+/*.card:hover,
+.card:focus{
+    
+    background-color: $c-text;
+    text-align: center;
+    .card__img{
+        position: relative;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        
+    }
+    .card__content{
+        padding: 0;
+    }
+}
+*/
+.new-catalog__btn{
+    display: inline-block;
+    padding: 15px 30px;
+    box-shadow: 0 0 25px rgba(163, 147, 133, 0.15);
+    border-radius: 4px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #333;
+}
+.new-catalog__btn:hover,
+.new-catalog__btn:focus{
+    box-shadow: 0 0 25px $c-primary;
+    background-color: $c-primary;
+    transition: all ease 0.4s;
+    color: #fff;
+}
+
+
+//следующая секция Instagram
+.insta{
+    text-align: center;
+    margin: 0px 0 110px;
+    &__title{
+        padding: 10px;
+        font-size: 32px;
+        line-height: 39px;
+       
+        color: #333;
+
+    }
+    &__icons{
+        display: flex;
+        justify-content: center;
+
+    }
+    &__product{
+        padding: 30px 0;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    &__img{
+        opacity: 0.6;
+        padding: 3px;
+        max-width: 33.3333%;
+        flex: 0 1 33.3333%;
+        
+    }
+    
+    &__img:hover,
+    &__img:focus{
+        opacity: 1;
+    }
+}
+.insta-icon{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    color: #333;
+
+    &__img{}
+    &__num{
+        padding: 0 10px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    &__text{
+        font-size: 16px;
+        line-height: 20px;
+
+        
+    }
+}
+.insta-btn{
+    padding: 13px 40px;
+    text-decoration: none;
+    background: #009BF2;
+    border-radius: 30px;
+    
+    &__text{
+        display: inline-block;
+        padding: 10px 0 10px 40px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: #FFF;
+        position: relative;
+    }
+    &__text:before{
+        content: "";
+        position: absolute;
+        background-image: url(../imgs/Instagram.svg);
+        width: 25px;
+        height: 24px;
+        top: 7px;
+        left: 0;
+    }
+
+}
+.insta-btn:hover,
+.insta-btn:focus{
+    background: linear-gradient(to right,#FED076,#F47133,#BC3081,#4C63D2);
+    transition: all 0 ease 0.3s; //не работает
+}
+
+// Начало странички news.pug
+
+.news-window{
+
+}
+.news{
+    margin: 150px 0 80px;
+
+    &__bread{
+        position: relative;
+        padding-left: 20px;
+        font-size: 12px;
+        line-height: 15px;
+
+        color: rgba(39, 32, 66, 0.5);
+    }
+    &__bread:before{
+        position: absolute;
+        content: "";
+        background-image: url(../imgs/vector.svg);
+        width: 12px;
+        height: 10px;
+        left: 0;
+        top: 2px;
+    }
+    &__title{
+        position: relative;
+        padding: 15px 0;
+        font-size: 32px;
+        line-height: 39px;
+
+        color: #272042;
+    }
+    &__title:before{
+        position: absolute;
+        content: "";
+        background-image: url(../imgs/lineCatalog.svg);
+        width: 34px;
+        height: 2px;
+        top: 60px;
+        left: 0;
+    }
+
+}
+.news-nav{
+    padding: 15px 0 25px;
+    display: flex;
+    justify-content: center;
+
+    &__item{
+        position: relative;
+    }
+    &__company,
+    &__actions{
+        text-decoration: none;
+        padding: 15px;
+        font-size: 18px;
+        line-height: 22px;
+
+        color: $c-text2;
+    }
+    &__company:hover,
+    &__actions:hover{
+        color:rgba(51, 51, 51, 0.7)
+    }
+
+    &__company:hover:before,
+    &__actions:hover:before{
+        position: absolute;
+        content: "";
+        background-image: url(../imgs/lineCatalog.svg);
+        width: 34px;
+        height: 2px;
+        top: 30px;
+        left: calc(50% - 17px);
+    }
+}
+.news__content{
+    display: flex;
+    margin: 30px 0px 70px;
+    flex-wrap: wrap;
+}
+.news-card{
+    max-width: 33.3333%;
+    flex: 0 1 33.3333%;
+    //margin: 2px;
+    position: relative;
+    &__img{
+        max-width: 100%;
+        z-index: 1;
+    }
+    &__img--disappear{
+        position: absolute;
+        max-width: 100%;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    &__data{
+        padding: 20px;
+        position: absolute;
+        font-size: 13px;
+        line-height: 16px;
+        
+        color: #A39385;
+        top: 0;
+    }
+    &__text{
+        padding: 20px;
+        position: absolute;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        top: 110px;
+        color: #000;
+    }
+    &__view{
+        padding: 20px;
+        position: absolute;
+        font-size: 13px;
+        line-height: 16px;
+        top: 0;
+        right: 0;
+        color: $c-primary;
+    }
+    &__view:before{
+        position: absolute;
+        background-image: url(../imgs/Eye.svg);
+        content: "";
+        width: 13px;
+        height: 8px;
+        top: 24px;
+        left: 0;
+    }
+}
+.news-card:hover{
+    .news-card__img--disappear{
+        opacity: 0;
+        transition: opacity ease 0.4s;
+    }
+    .news-card__text{
+        color: #FFF;
+        transition: color ease 0.3s;
+    }
+}
+.news-pages{
+    text-align: center;
+
+    &__link{
+        display: inline-block;
+    }
+    &__link>a{
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        
+        color: $c-primary;
+    }
+    &__link>a:hover,
+    &__link>a:focus{
+        transition: color ease 0.4s;
+        color: #000 ;
+    }
+    &__arrow{
+        display: inline-block;
+    }
+    &__arrow>a{
+        padding: 0 0 0 20px;
+    }
+    
+}
+.news-pages__img{
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//Описание активных кнопок
+.activeclick{
+    color:  rgba(51, 51, 51, 0.7);
+}
+.activeclick:before{
+    position: absolute;
+        content: "";
+        background-image: url(../imgs/lineCatalog.svg);
+        width: 34px;
+        height: 2px;
+        top: 30px;
+        left: calc(50% - 17px);
 }

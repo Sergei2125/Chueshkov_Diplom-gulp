@@ -14,18 +14,39 @@ header{
     justify-content: space-between;
     align-items: center;
     &__logo{
-        padding: 20px 0;
+        padding: 10px 0;
+    }
+    &__icon{
+        display: flex;
+    }
+    &__icon>a{
+        padding: 10px;
     }
 }
 .nav{
 
     &__item{
         display: inline-block;
-        padding: 12px 20px;
     }
     &__link{
+        padding: 12px 20px;
         color: $c-text;
         text-decoration: none;
     }
+    &__link:hover{
+        color: #FFF;
+        transition: color ease 0.3s;
+        border: 1px solid $c-primary;
+        border-radius: 30px;
+        background: $c-primary;
+
+    }
     
+}
+.active{
+    color: #FFF;
+    transition: color ease 0.3s;
+    border: 1px solid $c-primary;
+    border-radius: 30px;
+    background: $c-primary;
 }
