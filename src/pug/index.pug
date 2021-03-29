@@ -19,7 +19,7 @@ block content
     section 
         .container
             .new-catalog
-                h2.new-catalog__title#newCatalog Новинки каталога
+                h2.new-catalog__title.h2#newCatalog Новинки каталога
                 .new-catalog__nav
                     ul.new-catalog__nav
                         li.new-catalog__item
@@ -29,41 +29,33 @@ block content
                         li.new-catalog__item
                             a.new-catalog__link(href="#") Подвески
                 .product
-                    mixin product(arg={})
-                        .card
-                            a.card__link(href="#") 
-                                img.card__img(src=arg.img_src, alt="товар")
-                                .card__content
-                                    .card__newPrace=arg.new_price
-                                    .card__oldPrace=arg.old_price
-                                    .card__ring
-                                        img(src="../assets/imgs/stars.png", alt="stars")
-                                    .card__text=arg.description
-                                    a.card__bottom(href="#")
-                                        .card__btn в корзину
                     +product({
                         img_src: "../assets/imgs/ring001.png",
                         new_price: "12 990 ₽",
                         old_price: "28 800 ₽",
-                        description: "Кольцо из желтого золота с родированием с бриллиантом"
+                        description: "Кольцо из желтого золота с родированием с бриллиантом",
+                        material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
                     })
                     +product({
-                        img_src: "../assets/imgs/ring001.png",
-                        new_price: "12 990 ₽",
-                        old_price: "28 800 ₽",
-                        description: "Кольцо из желтого золота с родированием с бриллиантом"
+                        img_src: "../assets/imgs/ring002.png",
+                        new_price: "10 750 ₽",
+                        old_price: "25 500 ₽",
+                        description: "Кольцо из желтого золота с родированием с бриллиантом",
+                        material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
                     })
                     +product({
-                        img_src: "../assets/imgs/ring001.png",
-                        new_price: "12 990 ₽",
-                        old_price: "28 800 ₽",
-                        description: "Кольцо из желтого золота с родированием с бриллиантом"
+                        img_src: "../assets/imgs/ring003.png",
+                        new_price: "7 490 ₽",
+                        old_price: "19 250 ₽",
+                        description: "Кольцо из желтого золота с родированием с бриллиантом",
+                        material: "Белое золото, 585° Вставки: бриллианты Вес: 2,27 г"
                     })
                     +product({
-                        img_src: "../assets/imgs/ring001.png",
-                        new_price: "12 990 ₽",
-                        old_price: "28 800 ₽",
-                        description: "Кольцо из желтого золота с родированием с бриллиантом"
+                        img_src: "../assets/imgs/ring004.png",
+                        new_price: "9 990 ₽",
+                        old_price: "8 800 ₽",
+                        description: "Кольцо из желтого золота с родированием с бриллиантом",
+                        material: "Белое золото, 585° Вставки: бриллианты Вес: 2,27 г"
                     })
                 
                     
@@ -72,7 +64,7 @@ block content
     section 
         .container
             .insta
-                h2.insta__title Мы в Instagram
+                h2.h2.insta__title Мы в Instagram
                 .insta__icons
                     mixin insta-icon(arg={})
                         .insta-icon
@@ -96,13 +88,18 @@ block content
                     })
             
                 .insta__product
-                    img.insta__img(src="../assets/imgs/instaImg01.jpg", alt="InstaImg")
-                    img.insta__img(src="../assets/imgs/instaImg01.jpg", alt="InstaImg")
-                    img.insta__img(src="../assets/imgs/instaImg01.jpg", alt="InstaImg")
-                    img.insta__img(src="../assets/imgs/instaImg01.jpg", alt="InstaImg")
-                    img.insta__img(src="../assets/imgs/instaImg01.jpg", alt="InstaImg")
-                    img.insta__img(src="../assets/imgs/instaImg01.jpg", alt="InstaImg")
-                
+                    .insta__content
+                        img.insta__img(src="../assets/imgs/instaImg01.jpg", alt="InstaImg")
+                    .insta__content
+                        img.insta__img(src="../assets/imgs/instaImg02.jpg", alt="InstaImg")
+                    .insta__content
+                        img.insta__img(src="../assets/imgs/instaImg03.jpg", alt="InstaImg")
+                    .insta__content
+                        img.insta__img(src="../assets/imgs/instaImg04.jpg", alt="InstaImg")
+                    .insta__content
+                        img.insta__img(src="../assets/imgs/instaImg05.jpg", alt="InstaImg")
+                    .insta__content
+                        img.insta__img(src="../assets/imgs/instaImg06.jpg", alt="InstaImg")
                 
                 //.insta-btn                                                        
                 a.insta-btn(href="#")

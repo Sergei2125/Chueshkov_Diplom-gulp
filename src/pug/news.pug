@@ -2,7 +2,7 @@ extends layout/layout
 
 block vars
     - var pageTitle = 'Diplom'
-    - var pageBodyClass = 'homepage'
+    - var pageBodyClass = ''
     - var pageHeaderClass = ''
 
 block content
@@ -19,7 +19,7 @@ block content
                 .news__content
                     mixin news(arg={})
                         a.news-card(href="#")
-                            img.news-card__img(src=arg.img_src, alt="news-card") 
+                            img.news-card__img.mod(src=arg.img_src, alt="news-card") 
                             img.news-card__img--disappear(src=arg.img_srcDis, alt="news-cardDis") 
                             .news-card__data=arg.news_data
                             .news-card__text=arg.news_text 
@@ -35,7 +35,7 @@ block content
                         img_src: "../assets/imgs/news-card02.jpg",
                         img_srcDis: "../assets/imgs/news-card02Dis.jpg",
                         news_data: "22 декабря 2020",
-                        news_text: "Наши ювелиры. Закулисье Demetra-Sapphire Jewelry",
+                        news_text: "Наши ювелиры. Закулисье Demetra-Sapphire Jewelry ",
                         news_view: "38"
                     })
                     +news({

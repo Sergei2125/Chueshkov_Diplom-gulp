@@ -1,0 +1,14 @@
+mixin product(arg={})
+    .card
+        a.card__link(href="#") 
+            img.card__img(src=arg.img_src, alt="товар")
+            img.card__like(src="../assets/imgs/heart02.svg", alt="heart")
+            .card__content
+                .card__newPrace=arg.new_price
+                .card__oldPrace=arg.old_price
+                .card__stars
+                    img(src="../assets/imgs/stars.png", alt="stars")
+                p.card__text=arg.description
+                p.card__description=arg.material
+                a.card__bottom(href="#")
+                    .card__btn в корзину

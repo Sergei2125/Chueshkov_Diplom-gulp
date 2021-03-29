@@ -1,0 +1,223 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Diplom'
+    - var pageBodyClass = ''
+    - var pageHeaderClass = ''
+
+block content
+    section.catalog
+        .container 
+            p.catalog__bread Ювелирные украшения  /  Кольца
+            h2.h2.catalog__title Кольца
+            .catalog-menu
+                .catalog-menu__inner
+                    .catalog-menu__title Категория
+                    form.catalog-menu__items
+                        label.catalog-menu__item
+                            input.catalog-menu__input(type="checkbox" checked)
+                            span.catalog-menu__text Кольца
+                        label.catalog-menu__item
+                            input.catalog-menu__input(type="checkbox")
+                            span.catalog-menu__text Серьги
+                        label.catalog-menu__item
+                            input.catalog-menu__input(type="checkbox")
+                            span.catalog-menu__text Подвески
+                .catalog-menu__inner
+                    .catalog-menu__title Материал
+                    form.catalog-menu__items
+                        label.catalog-menu__item
+                            input.catalog-menu__input(type="checkbox" checked)
+                            span.catalog-menu__text Золото
+                        label.catalog-menu__item
+                            input.catalog-menu__input(type="checkbox")
+                            span.catalog-menu__text Серебро
+                .catalog-menu__inner
+                    .catalog-menu__title Вставка
+                    form.catalog-menu__items
+                        label.catalog-menu__item
+                            input.catalog-menu__input(type="checkbox" checked)
+                            span.catalog-menu__text Бриллиант
+                        label.catalog-menu__item
+                            input.catalog-menu__input(type="checkbox")
+                            span.catalog-menu__text Сапфир
+                        label.catalog-menu__item
+                            input.catalog-menu__input(type="checkbox")
+                            span.catalog-menu__text Изумруд
+                        label.catalog-menu__item
+                            input.catalog-menu__input(type="checkbox")
+                            span.catalog-menu__text Рубин
+                        label.catalog-menu__item
+                            input.catalog-menu__input(type="checkbox")
+                            span.catalog-menu__text Топаз
+                .catalog-menu__inner
+                    .catalog-menu__title Проба
+                    form.catalog-menu__items
+                        label.catalog-menu__item
+                            input.catalog-menu__input(type="checkbox")
+                            span.catalog-menu__text 585
+                        label.catalog-menu__item
+                            input.catalog-menu__input(type="checkbox" checked)
+                            span.catalog-menu__text 750
+                        label.catalog-menu__item
+                            input.catalog-menu__input(type="checkbox")
+                            span.catalog-menu__text 925
+                .catalog-menu__inner
+                    .catalog-menu__title Наличие
+                    form.catalog-menu__items
+                        label.catalog-menu__item
+                            input.catalog-menu__input(type="checkbox")
+                            span.catalog-menu__text Есть в наличии
+            .catalog-sort
+                span.catalog-sort__title Сортировать по:
+                form.catalog-sort__items
+                    label.catalog-sort__item 
+                        input.catalog-sort__input(type="checkbox")
+                        span.catalog-sort__text Популярности
+                    label.catalog-sort__item 
+                        input.catalog-sort__input(type="checkbox")
+                        span.catalog-sort__text По новизне
+                    label.catalog-sort__item 
+                        input.catalog-sort__input(type="checkbox")
+                        span.catalog-sort__text По цене
+    section
+        .container
+            .catalog-product
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+    section.winter-new
+        .container
+            .winter-new__inner
+                .winter-new__title зимние новинки 2020
+                .winter-new__sale время скидок
+                a(href="#").winter-new__link Смотреть новинки
+                img.winter-new__img(src="../assets/imgs/ringPhone1.png", alt="ring1")
+                img.winter-new__img2(src="../assets/imgs/ringPhone2.png", alt="ring2")
+    section
+        .container
+            .catalog-product
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+                +product({
+                    img_src: "../assets/imgs/ring001.png",
+                    new_price: "12 990 ₽",
+                    old_price: "28 800 ₽",
+                    description: "Кольцо из желтого золота с родированием с бриллиантом",
+                    material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
+                })
+    .catalog-pages
+        ul 
+            li.catalog-pages__link
+                a(href="#") 1
+            li.catalog-pages__link
+                a(href="#") 2
+            li.catalog-pages__link
+                a(href="#") 3
+            li.catalog-pages__link
+                a(href="#") 4
+            li.catalog-pages__link
+                a(href="#") 5
+            li.catalog-pages__arrow
+                a(href="#")
+                    img(src="../assets/imgs/rightArrow.svg", alt="rightarrow")

@@ -50,3 +50,12 @@ header{
     border-radius: 30px;
     background: $c-primary;
 }
+
+@media (max-width: 1029px){
+    .container{
+        width: 730px;
+    }
+    .nav{
+        display: none;
+    }
+ }

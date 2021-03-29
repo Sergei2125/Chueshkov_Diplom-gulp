@@ -20,6 +20,16 @@ $bg-color: #FFF;
     margin: 0 auto;
     padding: 0 15px;
 }
+@media (max-width: 1029px){
+    .container{
+        width: 730px;
+    }
+}
+@media (max-width: 729px){
+    .container{
+        max-width: calc(100% - 30px);
+    }
+}
 .header-content{
     background: url(../imgs/indexHeader.jpg) center no-repeat;
     background-size: cover;
@@ -77,17 +87,18 @@ $bg-color: #FFF;
 }
 
 // Начинается секция "Новинки каталога"
-
+.h2{
+    font-size: 32px;
+    line-height: 39px;
+    font-weight: normal;
+    color: #434343;
+}
 .new-catalog{
     text-align: center;
     margin: 40px 0 60px;
 
     &__title{
         padding: 42px 0 16px;
-        font-size: 32px;
-        line-height: 39px;
-
-        color: #434343;
     }
     &__nav{
         padding: 10px 0 20px;
@@ -127,23 +138,30 @@ $bg-color: #FFF;
 .product{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .card{
     padding: 30px 10px 20px;
-    flex: 0 1 25%;
-    max-width: 25%;
+    width: 240px;
+    height: 460px;
     position: relative;
     text-align: center;
-    //border: 1px solid black;
     &__link{
         text-decoration: none;
+    }
+    &__like{
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        opacity: 0;
     }
     &__img{
         left: 20px;
         top: 50px;
+        max-width: 100%;
     }
     &__content{
-        padding: 0px 0 0;
+        position: relative;
     }
     &__newPrace{
         font-weight: 500;
@@ -160,18 +178,39 @@ $bg-color: #FFF;
         line-height: 20px;
         color: #B8A99C;
     }
-    &__ring{
-        //position: absolute;
-        //top: 292px;
-        //left: 24%;
-        //background: #FFF;
-        //z-index: -1;
+    &__stars{
+        position: absolute;
+        top: 40px;
+        right: 50%;
+        left: 50%;
+        margin: 0 -65px 0;
+        opacity: 0;
     }
+    
     &__text{
         font-size: 16px;
         line-height: 20px;
-        padding: 10px 0;
+        margin: 10px 0 20px;
         color: rgba(51, 51, 51, 0.7);
+
+        // регулировка по высоте, скрытие текста 
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        height: 60px;
+        overflow: hidden;
+    }
+    &__description{
+        position: absolute;
+        font-size: 16px;
+        line-height: 20px;
+        width: 200px;
+        top: 80px;
+        right: 50%;
+        left: 50%;
+        margin: 0 -100px 0;
+        color: rgba(51, 51, 51, 0.7);
+        opacity: 0;
     }
     &__bottom{
         text-decoration: none;
@@ -179,9 +218,9 @@ $bg-color: #FFF;
         font-weight: 600;
         font-size: 16px;
         line-height: 20px;
-        
     }
     &__btn{
+        opacity: 0;
         text-decoration: none;
         padding: 11px 0px;
         font-weight: 600;
@@ -193,26 +232,43 @@ $bg-color: #FFF;
         background-color: $c-primary;
     }
 }
-/*.card:hover,
+.card:hover,
 .card:focus{
-    
+    transition: all ease 0.4s;
     background-color: $c-text;
     text-align: center;
-    .card__img{
-        position: relative;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        
+    .card__btn{
+        opacity: 1;
+        transition: all ease 0.5s;
     }
-    .card__content{
-        padding: 0;
+    .card__btn:hover{
+        opacity: 0.6;
+        transition: all ease 0.2s;
+    }
+    .card__like{
+        opacity: 1;
+        transition: all ease 1s;
+    }
+    .card__oldPrace{
+        visibility: hidden;
+    }
+    .card__stars{
+        transition: all ease 0.5s;
+        opacity: 1;
+    }
+    .card__text{
+        opacity: 0;
+    }
+    .card__description{
+        transition: all ease 0.5s;
+        opacity: 1;
     }
 }
-*/
+
 .new-catalog__btn{
     display: inline-block;
     padding: 15px 30px;
+    margin: 20px;
     box-shadow: 0 0 25px rgba(163, 147, 133, 0.15);
     border-radius: 4px;
 
@@ -236,12 +292,6 @@ $bg-color: #FFF;
     text-align: center;
     margin: 0px 0 110px;
     &__title{
-        padding: 10px;
-        font-size: 32px;
-        line-height: 39px;
-       
-        color: #333;
-
     }
     &__icons{
         display: flex;
@@ -254,17 +304,31 @@ $bg-color: #FFF;
         flex-wrap: wrap;
         
     }
-    &__img{
-        opacity: 0.6;
+    &__content{
+        opacity: 1;
         padding: 3px;
         max-width: 33.3333%;
         flex: 0 1 33.3333%;
+        position: relative;
+    }
+    &__img{
+        max-width: 100%;
         
     }
+    &__content:before{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        left: 0;
+    }
     
-    &__img:hover,
-    &__img:focus{
-        opacity: 1;
+    &__content:hover:before,
+    &__content:focus:before{
+        transition: opacity ease 0.4s;
+        opacity: 0;
     }
 }
 .insta-icon{
@@ -317,6 +381,30 @@ $bg-color: #FFF;
 .insta-btn:focus{
     background: linear-gradient(to right,#FED076,#F47133,#BC3081,#4C63D2);
     transition: all 0 ease 0.3s; //не работает
+}
+
+@media (max-width: 1029px){
+    .product{
+        justify-content: center
+    }
+    .card{
+        width: 240px;
+        height: 460px;
+    }
+    .insta__content{
+        max-width: 50%;
+        flex: 0 1 50%;
+        //width: 330px;
+        //height: 337px;
+    }
+    .insta__img{
+        width: 100%;
+        height: 100%;
+        //object-fit: cover;
+    }
+    .insta__content:before{
+        display: none;
+    }
 }
 
 // Начало странички news.pug
@@ -403,8 +491,7 @@ $bg-color: #FFF;
 }
 .news-card{
     max-width: 33.3333%;
-    flex: 0 1 33.3333%;
-    //margin: 2px;
+    flex: 0 1 33.3333%;;
     position: relative;
     &__img{
         max-width: 100%;
@@ -420,7 +507,7 @@ $bg-color: #FFF;
     }
     
     &__data{
-        padding: 20px;
+        padding: 15px;
         position: absolute;
         font-size: 13px;
         line-height: 16px;
@@ -429,13 +516,19 @@ $bg-color: #FFF;
         top: 0;
     }
     &__text{
-        padding: 20px;
+        padding: 10px 15px;
         position: absolute;
         font-weight: bold;
         font-size: 16px;
         line-height: 20px;
-        top: 110px;
+        top: 120px;
         color: #000;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        height: 85px;
+        overflow: hidden;
     }
     &__view{
         padding: 20px;
@@ -499,9 +592,340 @@ $bg-color: #FFF;
    
 }
 
+@media (max-width: 1029px){
+    .news-card:nth-child(1){
+        max-width: 100%;
+        flex: 0 0 100%;
+        height: 216px;
+    }
+    .news-card+img.mod{
+        width: 100%;
+        height: 50%;
+        //object-fit: contain;
+        opacity: 1;
+    }
+    .news-card{
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+    .news-card__view{
+        display: none;
+        padding: 0;
+    }
+    .news-card__text{
+        width: 85%;
+        color: #FFF;
+    }
+    .news-card__img--disappear{
+        display: none;
+    }
+    .news-card__img{
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        object-fit: cover;
+    }
+}
+@media (max-width: 729px){
+    .news{
+        margin: 100px -30px 80px;
+    }
+    .news__bread{
+        display: none;
+    }
+    .news__title{
+        text-align: center;
+    }
+    .news__title:before{
+        display: none;
+    }
+    .news-card__text{
+        top: 60px;
+    }
+    .news-card__data{
+        color: #EEE9E4;
+    }
+}
+@media (max-width: 535px){
+    .news-card:nth-child(1){
+        height: 160px;
+    }
+    .news-card__text{
+        top: 40px;
+        width: 100%;
+        font-size: 14px;
+        line-height: 16px;
+    }
+    
+}
+@media (max-width: 415px){
+    .news-card:nth-child(1){
+        height: 130px;
+    }
+    .news-card{
+        height: 130px;
+    }
+    .news-card__text{
+        top: 30px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .news-card__data{
+        font-size: 11px;
+        line-height: 13px;
+    }
+    .news-nav__actions,
+    .news-nav__company{
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+//новая страничка каталог catalog.pug
+
+.catalog{
+    margin: 150px 0 80px;
+
+    &__bread{
+    position: relative;
+        padding-left: 20px;
+        font-size: 12px;
+        line-height: 15px;
+
+        color: rgba(39, 32, 66, 0.5);
+    }
+    &__bread:before{
+        position: absolute;
+        content: "";
+        background-image: url(../imgs/vector.svg);
+        width: 12px;
+        height: 10px;
+        left: 0;
+        top: 2px;
+    }
+    &__title{
+        padding: 42px 0 16px;
+    }
+}
+.catalog-menu{
+    display: flex;
+    margin: 0 0 30px;
+    
+    &__inner{
+        padding: 14px 35px;
+    }
+    &__inner:nth-child(5){
+        padding-left: 100px;
+    }
+    &__title{
+        padding: 0 0 14px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        text-transform: uppercase;
+
+        color: #333;
+    }
+    &__item{
+        display: block;
+        position: relative;    
+    }
+    &__text{
+        padding-left: 25px;   
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 26px;
+
+        color: #333; 
+    }
+    &__input:before{
+        position: absolute;
+        content: " ";
+        background-image: url(../imgs/circle01.svg);
+        width: 24px;
+        height: 24px;
+        left: 0;
+        top: 0;
+    }
+    &__input:checked:after{
+        position: absolute;
+        content: " ";
+        background-image: url(../imgs/circle02.svg);
+        width: 24px;
+        height: 24px;
+        left: 0;
+        top: 0;
+    }
+}
+
+.catalog-sort{
+
+    &__items{
+        display: inline-block;
+    }
+    &__item{
+        padding: 7px 35px 9px 15px;
+        position: relative;
+    }
+    &__item:hover{
+        background: rgba(238, 233, 228, 0.25);
+        border-radius: 4px;
+    }
+    &__title{
+        padding: 7px 15px 7px 0;
+        font-size: 14px;
+        line-height: 17px;
+
+        color: #272042;
+    }
+    &__text{
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+
+        color: #272042;
+    }
+    &__input{
+        
+    }
+    &__input:hover:before{
+        position: absolute;
+        content: " ";
+        background-image: url(../imgs/bottomArrow.svg);
+        width: 20px;
+        height: 20px;
+        right: 12px;
+        top: 8px;
+    }
+    &__input:checked:hover:before{
+        position: absolute;
+        content: " ";
+        background-image: url(../imgs/bottomArrow.svg);
+        width: 20px;
+        height: 20px;
+        right: 12px;
+        top: 8px;
+        opacity: 0;
+    }
+    &__input:checked:after{
+        position: absolute;
+        content: " ";
+        background-image: url(../imgs/bottomArrow.svg);
+        width: 20px;
+        height: 20px;
+        right: 8px;
+        top: 10px;
+        transform: rotate(180deg);
+    }
+    
+}
+// следующая секция с картами продукта
+
+.catalog-product{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+//
+.winter-new{
+    background-image: url(../imgs/winter.jpg);
+    height: 450px;
+    margin: 30px 0;
+    text-align: center;
+    position: relative;
+    
+
+    &__inner{
+        padding: 76px 0 80px;
+        
+    }
+    &__title{
+        padding: 20px 0;
+        display: inline-block;
+        width: 480px;
+        font-weight: 300;
+        font-size: 42px;
+        line-height: 51px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+
+        color: #164284;
+    }
+    &__sale{
+        padding: 20px 0;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 1em;
+        text-transform: uppercase;
+
+        color: #164284;
+    }
+    &__link{
+        display: inline-block;
+        padding: 15px 30px;
+        margin: 20px 0;
+        background-color: #FFF;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        border-radius: 5px;
+    
+        color: #164284;
+    }
+    &__link:hover{
+        color: #fff;
+        background-color: #164284;
+        transition: all ease 0.4s;
+    }
+    &__img{
+        position: absolute;
+        width: 388px;
+        height: 301px;
+        left: 3%;
+        bottom: 0;
+    }
+    &__img2{
+        position: absolute;
+        width: 388px;
+        height: 301px;
+        right: 9%;
+        top: -40px;
+    }
+}
 
 
+.catalog-pages{
+    text-align: center;
+    margin: 30px 0 100px;
 
+    &__link{
+        display: inline-block;
+    }
+    &__link>a{
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        
+        color: $c-primary;
+    }
+    &__link>a:hover,
+    &__link>a:focus{
+        transition: color ease 0.4s;
+        color: #000 ;
+    }
+    &__arrow{
+        display: inline-block;
+    }
+    &__arrow>a{
+        padding: 0 0 0 20px;
+    }
+    
+}
 
 
 
