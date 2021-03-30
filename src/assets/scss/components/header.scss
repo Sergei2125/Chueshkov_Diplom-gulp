@@ -2,7 +2,7 @@
 
 // .header {}
 header{
-    background: rgba(163, 147, 133, 0.8);
+    background: rgba(238, 233, 228, 0.9);
     position: fixed;
     top: 0;
     left: 0;
@@ -13,8 +13,14 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    padding: 10px 0;
+
+    &__menu{
+        display: none;
+    }
     &__logo{
-        padding: 10px 0;
+        
     }
     &__icon{
         display: flex;
@@ -30,8 +36,9 @@ header{
     }
     &__link{
         padding: 12px 20px;
-        color: $c-text;
+        color: $c-primary;
         text-decoration: none;
+        border: 1px solid transparent;
     }
     &__link:hover{
         color: #FFF;
@@ -41,7 +48,21 @@ header{
         background: $c-primary;
 
     }
-    
+}
+
+.icon--heart,
+.icon--search,
+.icon--cart,
+.icon--menu{
+    width: 24px;
+    height: 24px;
+    fill: $c-primary;  
+}
+
+.logo{
+    width: 80px;
+    height: 50px;
+    fill: $c-primary;  
 }
 .active{
     color: #FFF;
@@ -51,6 +72,23 @@ header{
     background: $c-primary;
 }
 
+//Задание цветов для главной страницы
+.homepage{
+    header{
+        background: rgba(163, 147, 133, 0.8); 
+    }
+    .icon--heart,
+    .icon--search,
+    .icon--cart,
+    .icon--menu,
+    .logo{
+    fill: $c-text;
+    }
+    .nav__link{
+        color: $c-text
+    }
+}
+
 @media (max-width: 1029px){
     .container{
         width: 730px;
@@ -58,4 +96,32 @@ header{
     .nav{
         display: none;
     }
- }
+    .header__menu{
+        display: block;
+    }
+    .header__logo{
+        position: absolute;
+        left: calc(50% - 40px);
+    }
+    .header__search{
+        position: absolute;
+        left: 40px;
+    }
+}
+@media (max-width: 535px){
+    .header__logo{
+        left: calc(50% - 28px);
+    }
+    .logo{
+        width: 56px;
+        height: 35px;
+    }
+    .icon--heart,
+    .icon--search,
+    .icon--cart,
+    .icon--menu{
+        width: 20px;
+        height: 20px;
+    }
+
+}

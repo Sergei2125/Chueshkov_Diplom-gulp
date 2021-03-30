@@ -3,6 +3,8 @@
 
 @import "./main/reset";
 
+@import 'mixins/mixins';
+
 //https://www.figma.com/file/gflV0lUFNqsE9PG2FwGbb2/DSJ-Desktop-(Copy)-(Copy)
 
 html{
@@ -28,6 +30,7 @@ $bg-color: #FFF;
 @media (max-width: 729px){
     .container{
         max-width: calc(100% - 30px);
+        padding: 0 10px;
     }
 }
 .header-content{
@@ -95,7 +98,8 @@ $bg-color: #FFF;
 }
 .new-catalog{
     text-align: center;
-    margin: 40px 0 60px;
+    margin: 40px 0 45px;
+    padding-bottom: 30px;
 
     &__title{
         padding: 42px 0 16px;
@@ -151,6 +155,9 @@ $bg-color: #FFF;
     }
     &__like{
         position: absolute;
+        width: 20px;
+        height: 20px;
+        fill: $c-primary;
         right: 16px;
         top: 16px;
         opacity: 0;
@@ -158,7 +165,6 @@ $bg-color: #FFF;
     &__img{
         left: 20px;
         top: 50px;
-        max-width: 100%;
     }
     &__content{
         position: relative;
@@ -384,18 +390,44 @@ $bg-color: #FFF;
 }
 
 @media (max-width: 1029px){
+    
+    .header-index{
+
+        &__title{
+            font-size: 32px;
+            line-height: 40px;
+        }
+        &__text{
+            font-size: 16px;
+            line-height: 20px;
+        }
+        &__link{
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+    .new-catalog{
+        border-bottom: 1px solid $c-text;
+    }
     .product{
-        justify-content: center
+        justify-content: center;
     }
     .card{
-        width: 240px;
-        height: 460px;
+        margin: 3px;
+        border-radius: 15px;
+
+        background-color: $c-text;
+        text-align: center;
+        .card__btn{
+            opacity: 1;
+        }
+        .card__like{
+            opacity: 1;
+        }
     }
     .insta__content{
         max-width: 50%;
-        flex: 0 1 50%;
-        //width: 330px;
-        //height: 337px;
+        flex: 0 0 50%;
     }
     .insta__img{
         width: 100%;
@@ -406,7 +438,165 @@ $bg-color: #FFF;
         display: none;
     }
 }
+@media (max-width: 729px){
+    .header-content{
+        height: 70vh;
+    }
+    .header-index{
+        height: 70vh;
 
+        &__title{
+            padding: 0 10px 10px;
+            font-size: 30px;
+            line-height: 40px;
+        }
+        &__text{
+            font-size: 12px;
+            line-height: 15px;
+        }
+        &__slider{
+            display: none;
+        }
+    }
+    .new-catalog{
+        margin: 0 0 45px;
+    }
+    .insta__content{
+        padding: 0;
+    }
+}
+@media (max-width: 535px){
+    .header-content{
+        height: 50vh;
+    }
+    .header-index{
+        height: 50vh;
+
+        &__title{
+            font-size:23px;
+            line-height: 30px;
+        }
+        &__text{
+            font-size: 9px;
+            line-height: 12px;
+        }
+    }
+    .product{
+        padding: 0 50px;
+    }
+    .card{
+        width: 135px;
+        height: 210px;
+        padding: 20px 0 10px;
+    
+        &__img{
+            width: 121px;
+            height: 121px;
+            position: absolute;
+            max-width: 100%;
+            left: 7px;
+            right: 7px;
+            top: 10px;
+        }
+        &__like{
+            width: 13px;
+            height: 11px;
+            right: 12px;
+            top: 12px;
+        }
+        &__newPrace{
+            padding: 75px 0 7px;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 18px;
+        }
+        &__oldPrace{
+            padding: 0;
+            font-size: 11px;
+            line-height: 13px;
+        }
+        &__text{
+            margin: 0;
+            padding: 5px 5px 0;
+            font-size: 9px;
+            line-height: 11px;
+            height: 40px;
+        }
+        &__description{
+            display: none;
+        }
+        &__btn{
+            padding: 7px 0;
+            font-size: 9px;
+            line-height: 11px;
+            margin: 6px 20px;
+        }
+    }
+    .insta__title{
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .insta-icon{
+        padding: 10px;
+        &__img{
+            height: 20px;
+            width: 20px;
+        }
+        &__num{
+            padding: 0 5px;
+            font-size: 14px;
+            line-height: 16px;
+        }
+        &__text{
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+}
+@media (max-width: 415px){
+    
+    .header-index{
+
+        &__title{
+            font-size: 16px;
+            line-height: 20px
+        }
+        &__text{
+            font-size: 9px;
+            line-height: 11px;
+        }
+    }
+    .new-catalog__title{
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .new-catalog__link{
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 16px;
+    }
+    .product{
+        padding: 0;
+    }
+    .insta-icon{
+        padding: 10px;
+        &__img{
+            height: 10px;
+            width: 10px;
+        }
+        &__num{
+            padding: 0 5px;
+            font-size: 10px;
+            line-height: 12px;
+        }
+        &__text{
+            font-size: 10px;
+            line-height: 12px;
+        }
+    }
+}
 // Начало странички news.pug
 
 .news-window{
@@ -589,7 +779,7 @@ $bg-color: #FFF;
     
 }
 .news-pages__img{
-   
+
 }
 
 @media (max-width: 1029px){
@@ -628,7 +818,10 @@ $bg-color: #FFF;
 }
 @media (max-width: 729px){
     .news{
-        margin: 100px -30px 80px;
+        margin: 100px -15px 80px;
+    }
+    .container{
+        padding: 0;
     }
     .news__bread{
         display: none;
@@ -797,14 +990,8 @@ $bg-color: #FFF;
         right: 12px;
         top: 8px;
     }
+    
     &__input:checked:hover:before{
-        position: absolute;
-        content: " ";
-        background-image: url(../imgs/bottomArrow.svg);
-        width: 20px;
-        height: 20px;
-        right: 12px;
-        top: 8px;
         opacity: 0;
     }
     &__input:checked:after{
@@ -883,19 +1070,17 @@ $bg-color: #FFF;
         position: absolute;
         width: 388px;
         height: 301px;
-        left: 3%;
+        left: 0;
         bottom: 0;
     }
     &__img2{
         position: absolute;
         width: 388px;
         height: 301px;
-        right: 9%;
+        right: 0;
         top: -40px;
     }
 }
-
-
 .catalog-pages{
     text-align: center;
     margin: 30px 0 100px;
@@ -926,8 +1111,31 @@ $bg-color: #FFF;
     }
     
 }
-
-
+@media (max-width: 1029px){
+    .catalog-menu__inner{
+        padding: 14px;
+    }
+    .catalog-menu__inner:nth-child(5){
+        padding: 14px;
+    }
+    .catalog-product{
+        justify-content: center;
+    }
+    .winter-new{
+    
+    &__img{
+        width: 30%;
+        height: auto;
+    }
+    &__img2{
+        width: 30%;
+        height: auto;
+    }
+    }
+}
+@media (max-width: 729px){
+    
+}
 
 
 

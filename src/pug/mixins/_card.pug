@@ -2,7 +2,8 @@ mixin product(arg={})
     .card
         a.card__link(href="#") 
             img.card__img(src=arg.img_src, alt="товар")
-            img.card__like(src="../assets/imgs/heart02.svg", alt="heart")
+            //img.card__like(src="../assets/imgs/heart02.svg", alt="heart")
+            +icon('heart').card__like
             .card__content
                 .card__newPrace=arg.new_price
                 .card__oldPrace=arg.old_price

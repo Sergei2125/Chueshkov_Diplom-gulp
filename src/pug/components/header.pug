@@ -1,8 +1,10 @@
 header
     .container
         .header
+            a.header__menu(href="index.html")
+                +icon('menu').icon--menu
             a.header__logo(href="index.html")
-                img(src="../../assets/imgs/headerLogo.png", alt="headerLogo")
+                +icon('headerLogo').logo
             .nav
                 ul.nav__list
                     li.nav__item
@@ -15,12 +17,10 @@ header
                         a.nav__link(href="news.html") Новости
                     li.nav__item
                         a.nav__link(href="#") Контакты
-
             .header__icon
                 a.header__heart(href="#")
-                    img(src="../../assets/imgs/heart.svg", alt="")
-                    //+icon.search('search')
+                    +icon('heart').icon--heart
                 a.header__search(href="#")
-                    img(src="../../assets/imgs/search.svg", alt="")
-                a.header__search(href="#")
-                    img(src="../../assets/imgs/shoppingCart.svg", alt="")
+                    +icon('search').icon--search
+                a.header__cart(href="#")
+                    +icon('shoppingCart').icon--cart
