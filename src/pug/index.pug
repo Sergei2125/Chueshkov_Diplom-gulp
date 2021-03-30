@@ -15,7 +15,7 @@ block content
                 p.header-index__text since 2007
                 .header-index__slider 
                     a.header-index__link(href="#newCatalog") Лучшие ювелирные украшения 
-                        img.header-index__img(src="../assets/imgs/bottomArrow.svg", alt="bottomArrow")
+                        img.header-index__img(src="./assets/imgs/bottomArrow.svg", alt="bottomArrow")
     section 
         .container
             .new-catalog
@@ -29,29 +29,33 @@ block content
                         li.new-catalog__item
                             a.new-catalog__link(href="#") Подвески
                 .product
+                    a.product__left(href="#")
+                        img(src="./assets/imgs/leftArrow.svg", alt="leftArrow.svg") 
+                    a.product__right(href="#")
+                        img(src="./assets/imgs/rightArrow.svg", alt="rightArrow.svg") 
                     +product({
-                        img_src: "../assets/imgs/ring001.png",
+                        img_src: "./assets/imgs/ring001.png",
                         new_price: "12 990 ₽",
                         old_price: "28 800 ₽",
                         description: "Кольцо из желтого золота с родированием с бриллиантом",
                         material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
                     })
                     +product({
-                        img_src: "../assets/imgs/ring002.png",
+                        img_src: "./assets/imgs/ring002.png",
                         new_price: "10 750 ₽",
                         old_price: "25 500 ₽",
                         description: "Кольцо из желтого золота с родированием с бриллиантом",
                         material: "Желтое золото, 585° Вставки: бриллианты Вес: 2,27 г"
                     })
                     +product({
-                        img_src: "../assets/imgs/ring003.png",
+                        img_src: "./assets/imgs/ring003.png",
                         new_price: "7 490 ₽",
                         old_price: "19 250 ₽",
                         description: "Кольцо из белого золота с бриллиантами",
                         material: "Белое золото, 585° Вставки: бриллианты Вес: 2,27 г"
                     })
                     +product({
-                        img_src: "../assets/imgs/ring004.png",
+                        img_src: "./assets/imgs/ring004.png",
                         new_price: "9 990 ₽",
                         old_price: "8 800 ₽",
                         description: "Кольцо из белого золота",
@@ -60,7 +64,7 @@ block content
                 
                     
 
-                a.new-catalog__btn(href="#") Перейти в каталог
+                a.new-catalog__btn(href="catalog.html") Перейти в каталог
     section 
         .container
             .insta
@@ -72,36 +76,35 @@ block content
                             .insta-icon__num=arg.src_num
                             .insta-icon__text=arg.src_text 
                     +insta-icon({
-                        src_img: "../assets/imgs/instaIcon01.svg",
+                        src_img: "./assets/imgs/instaIcon01.svg",
                         src_num: "24",
                         src_text: "post"
                     })
                     +insta-icon({
-                        src_img: "../assets/imgs/instaIcon02.svg",
+                        src_img: "./assets/imgs/instaIcon02.svg",
                         src_num: "1,520",
                         src_text: "followers"
                     })
                     +insta-icon({
-                        src_img: "../assets/imgs/instaIcon03.svg",
+                        src_img: "./assets/imgs/instaIcon03.svg",
                         src_num: "66",
                         src_text: "following"
                     })
             
                 .insta__product
                     .insta__content
-                        img.insta__img(src="../assets/imgs/instaImg01.jpg", alt="InstaImg")
+                        img.insta__img(src="./assets/imgs/instaImg01.jpg", alt="InstaImg")
                     .insta__content
-                        img.insta__img(src="../assets/imgs/instaImg02.jpg", alt="InstaImg")
+                        img.insta__img(src="./assets/imgs/instaImg02.jpg", alt="InstaImg")
                     .insta__content
-                        img.insta__img(src="../assets/imgs/instaImg03.jpg", alt="InstaImg")
+                        img.insta__img(src="./assets/imgs/instaImg03.jpg", alt="InstaImg")
                     .insta__content
-                        img.insta__img(src="../assets/imgs/instaImg04.jpg", alt="InstaImg")
+                        img.insta__img(src="./assets/imgs/instaImg04.jpg", alt="InstaImg")
                     .insta__content
-                        img.insta__img(src="../assets/imgs/instaImg05.jpg", alt="InstaImg")
+                        img.insta__img(src="./assets/imgs/instaImg05.jpg", alt="InstaImg")
                     .insta__content
-                        img.insta__img(src="../assets/imgs/instaImg06.jpg", alt="InstaImg")
+                        img.insta__img(src="./assets/imgs/instaImg06.jpg", alt="InstaImg")
                 
                 //.insta-btn                                                        
-                a.insta-btn(href="#")
-                        //img.insta-btn__icon(src="../assets/imgs/Instagram.svg", alt="Instagram")                  
-                        .insta-btn__text Подписаться                
+                a.insta-btn(href="https://www.instagram.com")                  
+                    .insta-btn__text Подписаться                

@@ -143,6 +143,21 @@ $bg-color: #FFF;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: relative;
+}
+.product__left{
+    position: absolute;
+    width: 8px;
+    height: 14px;
+    left: -30px;
+    top: 45%;
+}
+.product__right{
+    position: absolute;
+    width: 8px;
+    height: 14px;
+    right: -30px;
+    top: 45%;
 }
 .card{
     padding: 30px 10px 20px;
@@ -413,6 +428,7 @@ $bg-color: #FFF;
         justify-content: center;
     }
     .card{
+        pointer-events: none;
         margin: 3px;
         border-radius: 15px;
 
@@ -791,7 +807,6 @@ $bg-color: #FFF;
     .news-card+img.mod{
         width: 100%;
         height: 50%;
-        //object-fit: contain;
         opacity: 1;
     }
     .news-card{
@@ -899,6 +914,9 @@ $bg-color: #FFF;
     &__title{
         padding: 42px 0 16px;
     }
+    &__title--mobile{
+        display: none;
+    }
 }
 .catalog-menu{
     display: flex;
@@ -950,7 +968,12 @@ $bg-color: #FFF;
         top: 0;
     }
 }
-
+.catalog-menu--mobile{
+    display: none;
+}
+.catalog-sort__item--menu{
+    display: none;
+}
 .catalog-sort{
 
     &__items{
@@ -1004,7 +1027,6 @@ $bg-color: #FFF;
         top: 10px;
         transform: rotate(180deg);
     }
-    
 }
 // следующая секция с картами продукта
 
@@ -1020,11 +1042,9 @@ $bg-color: #FFF;
     margin: 30px 0;
     text-align: center;
     position: relative;
-    
 
     &__inner{
         padding: 76px 0 80px;
-        
     }
     &__title{
         padding: 20px 0;
@@ -1126,20 +1146,142 @@ $bg-color: #FFF;
     &__img{
         width: 30%;
         height: auto;
+        z-index: 0;
     }
     &__img2{
         width: 30%;
         height: auto;
+        z-index: 0;
     }
     }
 }
 @media (max-width: 729px){
+    .catalog{
+        margin: 90px 0 40px;
+    }
+    .catalog__bread{
+        display: none;
+    }
+    .catalog__title{
+        display: none;
+    }
+    .catalog__title--mobile{
+        text-align: center;
+        display: block;
+    }
+    .catalog-menu{
+        display: none;
+    }
+    .catalog-menu--mobile{
+        display: block;
+        text-align: center;
+    }
+    .catalog-sort__title{
+        display: none;
+    }
+    .catalog-sort__item:not(.catalog-sort__item:nth-child(1)){
+        display: none;
+    }
+    .catalog-sort__items{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .catalog-sort__item--menu{
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        fill: $c-primary;
+        margin-bottom: 2px;  
+    }
+    .catalog-sort__item{
+        background: rgba(238, 233, 228, 0.25);
+        border-radius: 4px;
+        margin-right: 20px;
+    }
+    .catalog-sort__input:before{
+        position: absolute;
+        content: " ";
+        background-image: url(../imgs/bottomArrow.svg);
+        width: 20px;
+        height: 20px;
+        right: 12px;
+        top: 8px;
+        fill: #000;
+    }
     
+    .catalog-sort__input:checked:before{
+        opacity: 0;
+    }
+    .catalog-sort__input:checked:after{
+        position: absolute;
+        content: " ";
+        background-image: url(../imgs/bottomArrow.svg);
+        width: 20px;
+        height: 20px;
+        right: 8px;
+        top: 10px;
+        transform: rotate(180deg);
+    }
+    .catalog-pages{
+        margin: 40px 0 40px;
+    }
+    .winter-new{
+        height: 350px;
+    }
+    .winter-new__inner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .winter-new__title{
+        font-size: 32px;
+        line-height: 41px;
+        width: 400px;
+        z-index: 1;
+    }
+    .winter-new__link{
+        display: block;
+        width: 230px;
+        margin: 0;
+        z-index: 1;
+    }
+    .winter-new__sale{
+        display: none;
+    }
+    .winter-new__img{
+        width: 30%;
+    }
+    .winter-new__img2{
+        top:-10px;
+        width: 30%;
+    }
 }
-
-
-
-
+@media (max-width: 535px){
+    .catalog-product{
+        padding: 0 9%;
+    }
+    .winter-new{
+        height: 300px;
+    }
+    .winter-new__title{
+        font-size: 22px;
+        line-height: 31px;
+        width: 300px;
+        z-index: 1;
+    }
+    .winter-new__img{
+        width: 30%;
+    }
+    .winter-new__img2{
+        width: 40%;
+    }
+}
+@media (max-width: 415px){
+    .catalog-product{
+        padding: 0;
+    }
+}
 
 
 //Описание активных кнопок
