@@ -8,15 +8,15 @@ header
             .nav
                 ul.nav__list
                     li.nav__item
-                        a.nav__link(href="#") О компании
+                        a.nav__link(href="about.html",class=(pageBodyClass === "aboutPage" ? "activePage" : undefined) ) О компании
                     li.nav__item
-                        a.nav__link(href="catalog.html") Каталог
+                        a.nav__link(href="catalog.html",class=(pageBodyClass === "catalogPage" ? "activePage" : undefined)) Каталог
                     li.nav__item
-                        a.nav__link(href="#") Доставка
+                        a.nav__link(href="delivery.html",class=(pageBodyClass === "deliveryPage" ? "activePage" : undefined)) Доставка
                     li.nav__item
-                        a.nav__link(href="news.html") Новости
+                        a.nav__link(href="news.html",class=(pageBodyClass === "newsPage" ? "activePage" : undefined)) Новости
                     li.nav__item
-                        a.nav__link(href="#") Контакты
+                        a.nav__link(href="contacts.html",class=(pageBodyClass === "contactsPage" ? "activePage" : undefined)) Контакты
             .header__icon
                 a.header__heart(href="#")
                     +icon('heart').icon--heart

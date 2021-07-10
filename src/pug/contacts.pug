@@ -1,0 +1,28 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Diplom'
+    - var pageBodyClass = 'contactsPage'
+    - var pageHeaderClass = ''
+
+block content 
+    section.contacts
+        .container 
+            .contacts__content
+                .contacts__inner 
+                    p.contacts__bread Контакты
+                    h2.h2.contacts__title Контакты
+                    p.contacts__nameFirm АО «ДЕМЕТРА-САПФАЕРР»
+                    p.contacts__address Россия, 111020 Москва, 2-я Синичкина ул., 9А, стр. 7<br>БЦ «Синица Плаза»
+                    p.contacts__connection Связаться с нами
+                    p.contacts__phone1 +7 499 472 60 84
+                    p.contacts__phone2 +7 499 391 45 79
+                    p.contacts__instagram @demetra_sapphire_jewelry
+                    p.contacts__email Написать нам
+                .contacts__map
+                    img.contacts__image(src="./assets/imgs/map.png", alt="picture map")
+                    img.contacts__logo(src="./assets/imgs/map_marker.png", alt="picture marker")
+                    
+                    
+
+

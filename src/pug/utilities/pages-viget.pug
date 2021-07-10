@@ -2,7 +2,11 @@
 	var pages = [
 		{name: 'Главная', link: 'index'},
 		{name: 'Новости', link: 'news'},
-		{name: 'Каталог', link: 'catalog'}
+		{name: 'Каталог', link: 'catalog'},
+		{name: 'О компании', link: 'about'},
+		{name: 'Доставка', link: 'delivery'},
+		{name: 'Контакты', link: 'contacts'},
+
 	]
 
 +b.pages-viget
@@ -11,7 +15,7 @@
 			+e('li').__menu-item
 				+e('a').__menu-link(href= '') ТЗ
 			+e('li').__menu-item
-				+e('a').__menu-link(href= '') Дизайн
+				+e('a').__menu-link(href= 'https://www.figma.com/file/gflV0lUFNqsE9PG2FwGbb2/DSJ-Desktop-(Copy)-(Copy)') Дизайн
 			br
 			each item in pages
 				+e('li').__menu-item
