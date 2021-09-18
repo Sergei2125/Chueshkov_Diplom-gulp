@@ -8,6 +8,6 @@
 
 ***
 
-## команды запуска 
-+ gulp - режим разработки
-+ gulp build - режим для продакшн
+## launch command 
++ gulp - development mode
+
