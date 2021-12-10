@@ -1369,7 +1369,7 @@ html {
 
 
 footer {
-  background-color: #343E45;
+  background-color: #343e45;
   padding: 50px 0; }
 
 .footer {
@@ -1386,7 +1386,7 @@ footer {
     font-size: 14px;
     line-height: 30px;
     text-decoration: none;
-    color: #FFF; }
+    color: #fff; }
   .footer-about__link:hover {
     color: #A39385;
     transition: color ease 0.3s; }
@@ -1412,27 +1412,28 @@ footer {
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
-    color: #FFF; }
+    color: #fff; }
   .footer-contact__text {
     padding: 15px 0 20px;
     width: 230px;
     font-size: 14px;
     line-height: 30px;
-    color: #FFF; }
+    color: #fff; }
   .footer-contact__text > a {
     padding: 15px 0 20px;
     width: 230px;
     font-size: 14px;
     line-height: 30px;
     text-decoration: none;
-    color: #FFF; }
+    color: #fff; }
   .footer-contact__text > a:hover,
   .footer-contact__text > a:focus {
     color: #B8A99C;
     transition: color ease 0.3s; }
 
 .footer-info {
-  position: relative; }
+  position: relative;
+  padding-bottom: 5px; }
   .footer-info__tel, .footer-info__insta {
     padding-left: 35px;
     font-weight: 600;
@@ -1443,24 +1444,26 @@ footer {
   .footer-info__tel:before {
     position: absolute;
     content: "";
-    background-image: url(../Imgs/whatsapp.png);
+    background-image: url(../imgs/whatsapp.png);
     width: 24px;
     height: 24px;
-    left: 0; }
+    left: 0;
+    top: 3px; }
   .footer-info__insta:before {
     position: absolute;
     content: "";
-    background-image: url(../Imgs/Instagram02.png);
+    background-image: url(../imgs/Instagram02.png);
     width: 24px;
     height: 24px;
-    left: 0; }
+    left: 0;
+    top: 3px; }
   .footer-info__link {
     font-size: 14px;
     line-height: 17px;
     text-decoration: none;
     color: #B8A99C; }
   .footer-info__link:hover, .footer-info__link:focus, .footer-info__tel:hover, .footer-info__tel:focus, .footer-info__insta:hover, .footer-info__insta:focus {
-    color: #FFF;
+    color: #fff;
     transition: color ease 0.3s; }
   .footer-info__write {
     margin: 20px 0 0; }
