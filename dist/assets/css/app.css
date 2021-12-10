@@ -1444,7 +1444,7 @@ footer {
   .footer-info__tel:before {
     position: absolute;
     content: "";
-    background-image: url(../imgs/whatsapp.png);
+    background-image: url(/assets/imgs/whatsapp.png);
     width: 24px;
     height: 24px;
     left: 0;
@@ -1452,7 +1452,7 @@ footer {
   .footer-info__insta:before {
     position: absolute;
     content: "";
-    background-image: url(../imgs/Instagram02.png);
+    background-image: url(/assets/imgs/Instagram02.png);
     width: 24px;
     height: 24px;
     left: 0;
